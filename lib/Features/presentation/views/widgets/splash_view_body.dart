@@ -1,6 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
+import '../../../../constants.dart';
 import '../../../../core/utils/assets.dart';
+import '../../../home/presentation/views/home_view.dart';
 import 'sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {
@@ -17,18 +21,35 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
+    initSlidingAnimation();
+    navigateToHome();
+  }
 
-    // TODO: implement initState
-    animationController =
-        AnimationController(vsync: this, duration: const Duration(minutes: 1));
-    slidingAnimation =
-        Tween<Offset>(begin: const Offset(2, 0), end: Offset.zero)
-            .animate(animationController);
-    slidingAnimation.addListener(() {
-      setState(() {});
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      Get.to(() => const HomeView(),
+          transition: Transition.fade, duration: kTranstionDuration);
     });
+  }
 
-    dispose();
+  void initSlidingAnimation() {
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+
+    slidingAnimation =
+        Tween<Offset>(begin: const Offset(0, 2), end: Offset.zero)
+            .animate(animationController);
+
+    animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    animationController.dispose();
   }
 
   @override
