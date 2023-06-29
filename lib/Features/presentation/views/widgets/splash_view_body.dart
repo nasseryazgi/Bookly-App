@@ -1,6 +1,6 @@
+import 'package:bookly/core/utils/add_router.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../constants.dart';
 import '../../../../core/utils/assets.dart';
@@ -27,8 +27,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.to(() => const HomeView(),
-          transition: Transition.fade, duration: kTranstionDuration);
+      GoRouter.of(context).push(AppRouter.kHomeView);
+      // Get.to(() => const HomeView(),
+      //     transition: Transition.fade, duration: kTranstionDuration);
     });
   }
 
