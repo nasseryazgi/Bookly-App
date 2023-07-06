@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../utils/styles.dart';
@@ -8,15 +7,15 @@ class CustomBottom extends StatelessWidget {
     Key? key,
     required this.backgroundColor,
     required this.textColor,
-     this.borderRadius, required this.text,
-     this.fontSize,
-
+    this.borderRadius,
+    required this.text,
+    this.fontSize,
   }) : super(key: key);
   final double? fontSize;
   final Color backgroundColor;
   final String text;
   final Color textColor;
-  final BorderRadius ?borderRadius;
+  final BorderRadius? borderRadius;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -26,12 +25,13 @@ class CustomBottom extends StatelessWidget {
           style: TextButton.styleFrom(
               backgroundColor: backgroundColor,
               shape: RoundedRectangleBorder(
-                  borderRadius: borderRadius??BorderRadius.circular(12))),
+                  borderRadius: borderRadius ?? BorderRadius.circular(12))),
           child: Text(
-
             text,
-            style: Styles.textStyle18
-                .copyWith(color: textColor, fontSize: fontSize,fontWeight: FontWeight.w900),
+            style: Styles.textStyle18.copyWith(
+                color: textColor,
+                fontSize: fontSize,
+                fontWeight: FontWeight.w900),
           )),
     );
   }

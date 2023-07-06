@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/cupertino.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -27,8 +25,7 @@ class BooksDetailsSection extends StatelessWidget {
         ),
         Text(
           'The Jungle Book',
-          style: Styles.textStyle30
-              .copyWith(fontWeight: FontWeight.normal),
+          style: Styles.textStyle30.copyWith(fontWeight: FontWeight.normal),
         ),
         const SizedBox(
           height: 6,
@@ -36,8 +33,7 @@ class BooksDetailsSection extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text('Rudyard Kipling',
-              style: Styles.textStyle18
-                  .copyWith(fontStyle: FontStyle.italic)),
+              style: Styles.textStyle18.copyWith(fontStyle: FontStyle.italic)),
         ),
         const SizedBox(
           height: 18,
