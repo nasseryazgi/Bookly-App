@@ -1,7 +1,7 @@
-import 'package:bookly/Features/home/presentation/views/widgets/simlar_books_list_view.dart';
+import 'package:bookly/Features/home/data/presentation/views/widgets/simlar_books_list_view.dart';
 import 'package:flutter/cupertino.dart';
 
-import '../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/styles.dart';
 
 class SimilarBooksSection extends StatelessWidget {
   const SimilarBooksSection({Key? key}) : super(key: key);

@@ -2,9 +2,9 @@ import 'package:bookly/core/utils/add_router.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../constants.dart';
-import '../../../../../core/utils/assets.dart';
-import '../../../../../core/utils/styles.dart';
+import '../../../../../../constants.dart';
+import '../../../../../../core/utils/assets.dart';
+import '../../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 
 class BestSellerListViewItem extends StatelessWidget {

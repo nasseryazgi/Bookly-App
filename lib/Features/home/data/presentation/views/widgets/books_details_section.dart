@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/styles.dart';
 import 'book_rating.dart';
 import 'books_action.dart';
 import 'custom_book_details_appbar.dart';

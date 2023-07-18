@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../../../../core/utils/styles.dart';
+import '../../../../../../core/utils/styles.dart';
 import 'best_seller_listview.dart';
 import 'custom_app_bar.dart';
 import 'featured_books_list_view.dart';
