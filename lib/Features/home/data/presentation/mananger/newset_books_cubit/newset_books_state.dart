@@ -9,6 +9,7 @@ class NewsetBooksInitial extends NewsetBooksState {}
 
 class NewsetBooksLoading extends NewsetBooksState {}
 
+// ignore: must_be_immutable
 class NewsetBooksSuccess extends NewsetBooksState {
   List<BookModel> books;
   NewsetBooksSuccess(this.books);
