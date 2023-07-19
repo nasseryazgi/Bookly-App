@@ -4,7 +4,6 @@ import 'package:bookly/Features/home/data/presentation/views/widgets/custom_load
 import 'package:bookly/core/utils/custom_error.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'custom_list_view_item.dart';
 
 class FeaturedBooksListView extends StatelessWidget {
@@ -17,15 +16,20 @@ class FeaturedBooksListView extends StatelessWidget {
         return SizedBox(
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: state.books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 8),
-                    child: CustomBookImage(),
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: CustomBookImage(
+                      imageUrl: state.books[index].volumeInfo.imageLinks!
+                          .thumbnail as String,
+                    ),
                   );
                 }));
-      } else if (state is FeaturedBooksFaliure) {
-        return CustomErrorWidget(errorMessage: state.errorMessage);
+      } else if (state is FeaturedBooksFailure) {
+        return CustomErrorWidget(errorMessage: state.errMessage);
       } else {
         return const CustomLoadingIndicator();
       }
