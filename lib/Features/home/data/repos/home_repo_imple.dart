@@ -9,7 +9,7 @@ class HomeRepoImpl extends HomeRepo {
   ApiService apiService;
   HomeRepoImpl(this.apiService);
   @override
-  Future<Either<Failures, List<BookModel>>> fetchNewserBooks() async {
+  Future<Either<Failures, List<BookModel>>> fetchNewsetBooks() async {
     var data = await apiService.get(
         endPoint:
             'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science');
