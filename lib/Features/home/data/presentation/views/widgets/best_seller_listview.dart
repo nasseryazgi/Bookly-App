@@ -1,21 +1,36 @@
+import 'package:bookly/Features/home/data/presentation/mananger/newset_books_cubit/newset_books_cubit.dart';
+import 'package:bookly/Features/home/data/presentation/mananger/newset_books_cubit/newset_books_state.dart';
+import 'package:bookly/Features/home/data/presentation/views/widgets/custom_loading_indicator.dart';
+import 'package:bookly/core/utils/custom_error.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'best_saller_listview_item.dart';
 
 class BestSellerListView extends StatelessWidget {
-  const BestSellerListView({Key? key}) : super(key: key);
+  const BestSellerListView({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: const NeverScrollableScrollPhysics(),
-      padding: EdgeInsets.zero,
-      itemCount: 9,
-      itemBuilder: (context, index) {
-        return const Padding(
-          padding: EdgeInsets.symmetric(vertical: 10.0),
-          child: BestSellerListViewItem(),
+    return BlocBuilder<NewsetBooksCubit, NewsetBooksState>(
+        builder: (context, state) {
+      if (state is NewsetBooksSuccess) {
+        return ListView.builder(
+          physics: const NeverScrollableScrollPhysics(),
+          padding: EdgeInsets.zero,
+          itemCount: state.books.length,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10.0),
+              child: BestSellerListViewItem(book: state.books[index]),
+            );
+          },
         );
-      },
-    );
+      } else if (state is NewsetBooksFailure) {
+        return CustomErrorWidget(errorMessage: state.errMessage);
+      } else {
+        return const CustomLoadingIndicator();
+      }
+    });
   }
 }
