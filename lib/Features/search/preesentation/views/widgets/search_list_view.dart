@@ -20,6 +20,7 @@ class SearchListBody extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return GestureDetector(
+
                   onTap: () {
                     GoRouter.of(context).push(AppRouter.kBookDetailsView,
                         extra: books[index]);
