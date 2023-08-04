@@ -12,7 +12,7 @@ class SearchbookCubit extends Cubit<SearchbookState> {
     response.fold((faillure) {
       emit(SearchbookError(faillure.errorMessage));
     }, (books) {
-      emit(SearchbookSuccers(books));
+      emit(SearchbookSucess(books));
     });
   }
 }

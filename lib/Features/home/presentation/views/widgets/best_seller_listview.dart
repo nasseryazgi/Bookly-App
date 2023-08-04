@@ -12,8 +12,7 @@ class BestSellerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<NewsetBooksCubit, NewsetBooksState>(
-        builder: (context, state) {
+    return BlocBuilder<NewsetBooksCubit, NewsetBooksState>(builder: (context, state) {
       if (state is NewsetBooksSuccess) {
         return ListView.builder(
           physics: const NeverScrollableScrollPhysics(),

@@ -12,7 +12,6 @@ class BestSellerListViewItem extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
   const BestSellerListViewItem({Key? key, required this.book});
   final BookModel book;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,17 +24,17 @@ class BestSellerListViewItem extends StatelessWidget {
           children: [
             CustomBookImage(
                 imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? ''),
-            // AspectRatio(
-            //   aspectRatio: 2.5 / 4,
-            //   child: Container(
-            //     height: 125,
-            //     decoration: BoxDecoration(
-            //         borderRadius: BorderRadius.circular(8),
-            //         image: const DecorationImage(
-            //             fit: BoxFit.fill,
-            //             image: AssetImage(AassetsData.testImage))),
-            //   ),
-            // ),
+          /*  AspectRatio(
+              aspectRatio: 2.5 / 4,
+              child: Container(
+                height: 125,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    image: const DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage(AassetsData.testImage))),
+              ),
+            ),*/
             const SizedBox(
               width: 30,
             ),

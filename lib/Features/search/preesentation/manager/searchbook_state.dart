@@ -9,14 +9,14 @@ abstract class SearchbookState extends Equatable {
 }
 
 class SearchbookInitial extends SearchbookState {}
-class SearchbookSuccers extends SearchbookState {
-  final List<BookModel> book;
-  const SearchbookSuccers(this.book);
+class SearchbookSucess extends SearchbookState {
+  final List<BookModel> bookCustom;
+  const SearchbookSucess(this.bookCustom);
 }
 
 class SearchbookError extends SearchbookState {
-  final String errormessage;
-  const SearchbookError(this.errormessage);
+  final String errMessage;
+  const SearchbookError(this.errMessage);
 }
 
 class SearchbookLoading extends SearchbookState {}
