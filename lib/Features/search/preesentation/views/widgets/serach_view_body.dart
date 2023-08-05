@@ -3,7 +3,6 @@ import 'package:bookly/Features/home/presentation/views/widgets/custom_loading_i
 import 'package:bookly/Features/search/preesentation/manager/searchbook_cubit.dart';
 import 'package:bookly/Features/search/preesentation/manager/searchbook_state.dart';
 import 'package:bookly/Features/search/preesentation/views/widgets/search_list_view.dart';
-import 'package:bookly/Features/search/preesentation/views/widgets/search_result_view.dart';
 import 'package:bookly/core/utils/custom_error.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -53,18 +52,3 @@ class SearchViewBody extends StatelessWidget {
     ));
   }
 }
-// Padding(
-// padding: EdgeInsets.symmetric(horizontal: 30.0),
-// child: Column(
-// crossAxisAlignment: CrossAxisAlignment.start,
-// children: [
-// const SizedBox(
-// height: 30,
-// ),
-// CustomSearchTextField(
-// searchbookCubit: null,
-// ),
-// Expanded(child: SearchResultView())
-// ],
-// ),
-// )
